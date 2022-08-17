@@ -88,11 +88,12 @@ describe 'ActiveRecord Obstacle Course, Week 2' do
 
     # ----------------------- Using Ruby -------------------------
     order = Order.find(@order_3.id)
-    grouped_items = order.items.sort_by { |item| item.name }
+    # grouped_items = order.items.sort_by { |item| item.name }
     # ------------------------------------------------------------
 
     # ------------------ Using ActiveRecord ----------------------
-    # Solution goes here
+    binding.pry
+    grouped_items = Item.where(order_id: @order_3.id).sort(:name)
     # ------------------------------------------------------------
 
     # Expectation
